@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,8 +17,16 @@ public class Driver {
         if ("firefox".equals(browser)) {
             // Настройка Firefox
             WebDriverManager.firefoxdriver().setup();
-
-            driver = new FirefoxDriver();
+            FirefoxOptions options = new FirefoxOptions();
+            options.addArguments(
+                    "--no-sandbox",
+                    "--headless",
+                    "--disable-dev-shm-usage",
+                    "--window-size=1920,1080",
+                    "--disable-gpu",
+                    "--disable-extensions"
+            );
+            driver = new FirefoxDriver(options);
             driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             driver.get("https://qa-scooter.praktikum-services.ru/");
         } else if ("chrome".equals(browser)) {
