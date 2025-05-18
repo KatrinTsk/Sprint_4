@@ -50,8 +50,7 @@ public class Driver {
     }
 
     public WebDriver getDriver() {
-        return driver;
-    }
+        return driver;    }
 }
 
 

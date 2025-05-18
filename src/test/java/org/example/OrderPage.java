@@ -13,171 +13,116 @@ public class OrderPage {
     private WebDriver driver;
     private WebDriverWait driverWait;
 
-    // Локатор кнопки cookie "Да все привыкли"
-    private By buttonCookie = By.xpath("//button[contains(text(), 'да все привыкли')]");
-
-    // Локатор верней кнопки "Заказать"
-    private By orderButton1 = By.className("Button_Button__ra12g");
-
-    // Локатор нижней кнопки "Заказать"
-    private By orderButton2 = By.cssSelector(".Button_Button__ra12g.Button_Middle__1CSJM");
-
-    // локатор поля "Имя"
-    private By namOrder = By.xpath("//input[@placeholder='* Имя']");
-
-    // локатор поля "Фамилия"
-    private By lastNameOrder = By.xpath("//input[@placeholder='* Фамилия']");
-
-    // локатор поля "Адрес"
-    private By addressOrder = By.xpath("//input[@placeholder='* Адрес: куда привезти заказ']");
-
-    // локатор для поля "Станция метро"
-    private By metroDropDownOrder = By.xpath("//input[@placeholder='* Станция метро']");
-
-    // локатор для поля "Телефон"
-    private By phoneOrder = By.xpath("//input[@placeholder='* Телефон: на него позвонит курьер']");
-
-    // локатор кнопки "Далее"
-    private By buttonFurther = By.xpath(".//button[text()='Далее']");
-
-    // локатор поля "Когда привезти самокат"
-    private By dateOrder = By.xpath("//input[@placeholder='* Когда привезти самокат']");
-    // локатор
-    private By heading = By.className("Order_Header__BZXOb");
-
-    // локатор поля "Срок аренды"
-    private By rentalPeriodOrder = By.xpath("//div[text()='* Срок аренды']");
-
-    // локатор поля "Цвет самоката"
-    private By colorBlackScooterOrder = By.id("black"); // локатор чекбокса "Черный жемчуг"
-    private By colorGreyScooterOrder = By.id("grey"); // локатор чекбокса "Серая безысходность"
-
-    // локатор поля "Комментарий для курьера"
-    private By commentOrder = By.xpath("//input[contains(@class, 'Input_Input__1iN_Z') and contains(@class, 'Input_Responsible__1jDKN')]");
-
-    // локатор кнопки "Заказать"
-    private By buttonOrder3 = By.xpath("(//button[contains(@class, 'Button_Button__ra12g') and text()='Заказать'])[2]");
-
-    // локатор заголовка подтверждения заказа
-    private By consentHeader = By.className("Order_ModalHeader__3FDaJ");
-
-    // локатор кнопки "Да"
-    private By yesButton = By.xpath(".//button[text()='Да']");
-
-    // проверка оформленности заказа
-    private By modalHeader = By.className("Order_ModalHeader__3FDaJ");
+    //  ЛОКАТОРЫ
+    private By buttonCookie = By.xpath("//button[contains(text(), 'да все привыкли')]"); // Кнопка cookie "Да все привыкли"
+    private By orderButtonTop = By.className("Button_Button__ra12g"); // Верхняя кнопка "Заказать"
+    private By orderButtonBottom = By.xpath("(//button[text()='Заказать'])[2]"); // Нижняя кнопка "Заказать"
+    private By namOrder = By.xpath("//input[@placeholder='* Имя']"); // Поле "Имя"
+    private By lastNameOrder = By.xpath("//input[@placeholder='* Фамилия']"); // Поле "Фамилия"
+    private By addressOrder = By.xpath("//input[@placeholder='* Адрес: куда привезти заказ']"); // Поле "Адрес"
+    private By metroDropDownOrder = By.xpath("//input[@placeholder='* Станция метро']"); // Поле "Станция метро"
+    private By phoneOrder = By.xpath("//input[@placeholder='* Телефон: на него позвонит курьер']"); // Поле "Телефон"
+    private By buttonFurther = By.xpath(".//button[text()='Далее']"); // Кнопка "Далее"
+    private By dateOrder = By.xpath("//input[@placeholder='* Когда привезти самокат']"); // Поле "Когда привезти самокат"
+    private By heading = By.className("Order_Header__BZXOb"); // Заголовок "Про аренду"
+    private By rentalPeriodOrder = By.xpath("//div[text()='* Срок аренды']"); // Поле "Срок аренды"
+    private By colorBlackScooterOrder = By.id("black"); // Чекбокс цвета самоката "Черный жемчуг"
+    private By colorGreyScooterOrder = By.id("grey"); // Чекбокс цвета самоката "Серая безысходность"
+    private By commentOrder = By.xpath("//input[contains(@class, 'Input_Input__1iN_Z') and contains(@class, 'Input_Responsible__1jDKN')]"); // Поле "Комментарий для курьера"
+    private By buttonOrder3 = By.xpath("(//button[contains(@class, 'Button_Button__ra12g') and text()='Заказать'])[2]"); // Кнопка "Заказать"
+    private By consentHeader = By.className("Order_ModalHeader__3FDaJ"); // Заголовок подтверждения заказа
+    private By yesButton = By.xpath(".//button[text()='Да']"); // Кнопка "Да"
+    private By modalHeader = By.xpath("//div[text()='Заказ оформлен']"); // Заголовок "Заказ оформлен"
 
 
     public OrderPage(WebDriver driver) {
         this.driver = driver;
-        this.driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.driverWait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
+    // МЕТОДЫ
 
-    // Клик по кнопке cookie "Да все привыкли"
-    public void clickCookie() {
+    public void clickCookie() { // Клик по кнопке cookie "Да все привыкли"
         driver.findElement(buttonCookie).click();
     }
 
-    // Клик по верхней кнопке "Заказать"
-    public void clickOrderButton1() {
-        driver.findElement(orderButton1).click();
+    public void clickOrderButton1() { // Клик по верхней кнопке "Заказать"
+        driver.findElement(orderButtonTop).click();
     }
 
-    // скролл и клик по нижней кнопке "Заказать"
-    public void clickOrderButton2() {
-        WebElement button = driver.findElement(orderButton2);
+    public void clickOrderButton2() { // Скролл и клик по нижней кнопке "Заказать"
+        WebElement button = driver.findElement(orderButtonBottom);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(); arguments[0].click();", button);
     }
 
-    // ввод имени
-    public void setName(String name) {
+    public void setName(String name) { // Ввод имени
         driver.findElement(namOrder).sendKeys(name);
     }
 
-    // ввод фамилии
-    public void setLastName(String lastName) {
+    public void setLastName(String lastName) { // Ввод фамилии
         driver.findElement(lastNameOrder).sendKeys(lastName);
     }
 
-    // ввод адреса
-    public void setAddress(String Address) {
+    public void setAddress(String Address) { // Ввод адреса
         driver.findElement(addressOrder).sendKeys(Address);
     }
 
-    // выбор станции
-
-    public void selectMetroStation(String stationName) {
-        // Кликаем на поле выбора станции
-        driver.findElement(metroDropDownOrder).click();
-
-        // 2. Ищем станцию по тексту (универсальный локатор)
-        By stationLocator = By.xpath(String.format("//div[text()='%s']", stationName));
-
-        // 3. Кликаем с ожиданием
-        driverWait.until(ExpectedConditions.elementToBeClickable(stationLocator)).click();
+    public void selectMetroStation(String stationName) { // Выбор станции
+        driver.findElement(metroDropDownOrder).click(); // Клик на поле выбора станции
+        By stationLocator = By.xpath(String.format("//div[text()='%s']", stationName)); // Поиск станции по тексту (универсальный локатор)
+        driverWait.until(ExpectedConditions.elementToBeClickable(stationLocator)).click(); // Клик с ожиданием
     }
 
-
-    // ввод номера телефона
-    public void setPhone(String phone) {
+    public void setPhone(String phone) { // Ввод номера телефона
         driver.findElement(phoneOrder).sendKeys(phone);
     }
 
-    // клик по кнопке "Далее"
-    public void clickButtonFurther() {
+    public void clickButtonFurther() { // Клик по кнопке "Далее"
         driver.findElement(buttonFurther).click();
     }
 
-    public void waitAfterNextButton() {
-        // Ожидаем появления заголовка "Про аренду" (вторая страница формы)
-        By rentHeader = By.xpath("//div[contains(text(), 'Про аренду')]");
+    public void waitAfterNextButton() { // Ожидание после нажатия кнопки "Далее"
+        By rentHeader = By.xpath("//div[contains(text(), 'Про аренду')]"); // Ожидание появления заголовка "Про аренду" (вторая страница формы)
         driverWait.until(ExpectedConditions.visibilityOfElementLocated(rentHeader));
     }
 
-    // ввод даты заказа
-    public void setDeliveryDate(String date) {
+    public void setDeliveryDate(String date) { // Ввод даты заказа
         driver.findElement(dateOrder).sendKeys(date);
         driverWait.until(ExpectedConditions.elementToBeClickable(heading)).click();
     }
 
-    // Метод для выбора срока аренды
-    public void setRentalPeriod(String period) {
+    public void setRentalPeriod(String period) { // Выбора срока аренды
         driver.findElement(rentalPeriodOrder).click(); // Клик на поле "Срок аренды"
         By periodOption = By.xpath(String.format("//div[@class='Dropdown-option' and text()='%s']", period));
         driverWait.until(ExpectedConditions.elementToBeClickable(periodOption)).click();
     }
 
-    // Метод для выбора цвета самоката
-    public void setScooterColor(String color) {
-        if (color.equals("black")) {
+    public void setScooterColor(String color) { // Выбора цвета самоката
+        if (color.equals("black")) { // "Черный жемчуг"
             driver.findElement(colorBlackScooterOrder).click();
-        } else if (color.equals("grey")) {
+        } else if (color.equals("grey")) { // "Серая безысходность"
             driver.findElement(colorGreyScooterOrder).click();
         }
     }
 
-    // Метод для заполнения комментария
-    public void setComment(String comment) {
+    public void setComment(String comment) { // Заполнение комментария
         driver.findElement(commentOrder).sendKeys(comment);
     }
 
-    // Метод для клика по кнопке "Заказать" (на второй странице формы)
-    public void clickOrderButton3() {
+    public void clickOrderButton3() { // Клика по кнопке "Заказать"
         driver.findElement(buttonOrder3).click();
     }
 
-    // ожидание открытия формы для подтверждения
-    public void clickYesButton() {
+    public void clickYesButton() { // Ожидание открытия формы для подтверждения
         driverWait.until(ExpectedConditions.elementToBeClickable(yesButton)).click();
     }
 
-    // появилось окно "Заказ оформлен"
-    public boolean orderModalHeader() {
+    public boolean orderModalHeader() { // Проверка появиления окна "Заказ оформлен"
         return driverWait.until(ExpectedConditions.visibilityOfElementLocated(modalHeader)).isDisplayed();
     }
 
 
+    // ШАГИ
     public void sendOrderFormClickOrderButton1(String name, String lastName, String adress, String stationName, String phone) {
         clickOrderButton1();
         setName(name);
