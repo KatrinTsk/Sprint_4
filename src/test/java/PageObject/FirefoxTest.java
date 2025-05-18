@@ -17,12 +17,12 @@ public class FirefoxTest extends ScooterOrderTest {
     }
 
     @Test
-    public void orderTest1Firefox() {
+    public void orderTestButton1Firefox() {
         orderTestButton1(firefoxDriver);
     }
 
     @Test
-    public void orderTest2Firefox() {
+    public void orderTestButton2Firefox() {
         orderTestButton2(firefoxDriver);
     }
 

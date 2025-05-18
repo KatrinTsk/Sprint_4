@@ -17,7 +17,7 @@ public class ChromeTest extends ScooterOrderTest {
     }
 
     @Test
-    public void oderTest1Chrome() {
+    public void orderTestButton1Chrome() {
         orderTestButton1(chromeDriver);
     }
 
