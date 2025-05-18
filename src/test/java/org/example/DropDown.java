@@ -68,7 +68,7 @@ public class DropDown {
         driver.findElement(buttonQuestionDropDown1).click();
     }
     public void checkTextAnswerDropDown1() { // Сравнение текста раскрывшегося списка с ожидаемым текстом
-        WebElement answer = driver.findElement(textAnswerDropDown1); // Поиск элемент с ответом
+        WebElement answer = driver.findElement(textAnswerDropDown1); // Поиск элемента с ответом
         assertEquals(
                 "Открывающийся текст не соответствует ожидаемому",
                 "Сутки — 400 рублей. Оплата курьеру — наличными или картой.",
@@ -80,7 +80,7 @@ public class DropDown {
         driver.findElement(buttonQuestionDropDown2).click();
     }
     public void checkTextAnswerDropDown2() { // Сравнение текста раскрывшегося списка с ожидаемым текстом
-        WebElement answer = driver.findElement(textAnswerDropDown2); // Поиск элемент с ответом
+        WebElement answer = driver.findElement(textAnswerDropDown2); // Поиск элемента с ответом
         assertEquals(
                 "Открывающийся текст не соответствует ожидаемому",
                 "Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим.",
@@ -92,7 +92,7 @@ public class DropDown {
         driver.findElement(buttonQuestionDropDown3).click();
     }
     public void checkTextAnswerDropDown3() { // Сравнение текста раскрывшегося списка с ожидаемым текстом
-        WebElement answer = driver.findElement(textAnswerDropDown3); // Поиск элемент с ответом
+        WebElement answer = driver.findElement(textAnswerDropDown3); // Поиск элемента с ответом
         assertEquals(
                 "Открывающийся текст не соответствует ожидаемому",
                 "Допустим, вы оформляете заказ на 8 мая. Мы привозим самокат 8 мая в течение дня. Отсчёт времени аренды начинается с момента, когда вы оплатите заказ курьеру. Если мы привезли самокат 8 мая в 20:30, суточная аренда закончится 9 мая в 20:30.",
@@ -104,7 +104,7 @@ public class DropDown {
         driver.findElement(buttonQuestionDropDown4).click();
     }
     public void checkTextAnswerDropDown4() { // Сравнение текста раскрывшегося списка с ожидаемым текстом
-        WebElement answer = driver.findElement(textAnswerDropDown4); // Поиск элемент с ответом
+        WebElement answer = driver.findElement(textAnswerDropDown4); // Поиск элемента с ответом
         assertEquals(
                 "Открывающийся текст не соответствует ожидаемому",
                 "Только начиная с завтрашнего дня. Но скоро станем расторопнее.",
@@ -116,7 +116,7 @@ public class DropDown {
         driver.findElement(buttonQuestionDropDown5).click();
     }
     public void checkTextAnswerDropDown5() { // Сравнение текста раскрывшегося списка с ожидаемым текстом
-        WebElement answer = driver.findElement(textAnswerDropDown5); // Поиск элемент с ответом
+        WebElement answer = driver.findElement(textAnswerDropDown5); // Поиск элемента с ответом
         assertEquals(
                 "Открывающийся текст не соответствует ожидаемому",
                 "Пока что нет! Но если что-то срочное — всегда можно позвонить в поддержку по красивому номеру 1010.",
@@ -128,7 +128,7 @@ public class DropDown {
         driver.findElement(buttonQuestionDropDown6).click();
     }
     public void checkTextAnswerDropDown6() { // Сравнение текста раскрывшегося списка с ожидаемым текстом
-        WebElement answer = driver.findElement(textAnswerDropDown6); // Поиск элемент с ответом
+        WebElement answer = driver.findElement(textAnswerDropDown6); // Поиск элемента с ответом
         assertEquals(
                 "Открывающийся текст не соответствует ожидаемому",
                 "Самокат приезжает к вам с полной зарядкой. Этого хватает на восемь суток — даже если будете кататься без передышек и во сне. Зарядка не понадобится.",
@@ -140,7 +140,7 @@ public class DropDown {
         driver.findElement(buttonQuestionDropDown7).click();
     }
     public void checkTextAnswerDropDown7() { // Сравнение текста раскрывшегося списка с ожидаемым текстом
-        WebElement answer = driver.findElement(textAnswerDropDown7); // Поиск элемент с ответом
+        WebElement answer = driver.findElement(textAnswerDropDown7); // Поиск элемента с ответом
         assertEquals(
                 "Открывающийся текст не соответствует ожидаемому",
                 "Да, пока самокат не привезли. Штрафа не будет, объяснительной записки тоже не попросим. Все же свои.",
@@ -152,7 +152,7 @@ public class DropDown {
         driver.findElement(buttonQuestionDropDown8).click();
     }
     public void checkTextAnswerDropDown8() { // Сравнение текста раскрывшегося списка с ожидаемым текстом
-        WebElement answer = driver.findElement(textAnswerDropDown8); // Поиск элемент с ответом
+        WebElement answer = driver.findElement(textAnswerDropDown8); // Поиск элемента с ответом
         assertEquals(
                 "Открывающийся текст не соответствует ожидаемому",
                 "Да, обязательно. Всем самокатов! И Москве, и Московской области.",
