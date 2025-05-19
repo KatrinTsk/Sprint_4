@@ -1,4 +1,4 @@
-package org.example;
+package ru.yandex.praktikum.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

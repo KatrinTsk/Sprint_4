@@ -1,4 +1,4 @@
-package org.example;
+package ru.yandex.praktikum.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,10 +6,10 @@ import org.openqa.selenium.WebElement;
 
 import static org.junit.Assert.assertEquals;
 
-// класс раскрывающегося списка.
-// Здесь проверяем что чписки раскрываются и что открывшийся текст соответствует ожидаемому
+// Класс раскрывающегося списка.
+// Здесь проверяем что cписки раскрываются и что открывшийся текст соответствует ожидаемому
 
-public class DropDown {
+public class DropdownPage {
 
     // ЛОКАТОРЫ
 
@@ -49,7 +49,7 @@ public class DropDown {
     private By textAnswerDropDown8 = By.id("accordion__panel-7"); // Ответ №9
 
 
-    public DropDown(WebDriver driver) {
+    public DropdownPage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -67,6 +67,7 @@ public class DropDown {
     public void clickButtonQuestionDropDown1() { // Кликаем по выпадающему списку
         driver.findElement(buttonQuestionDropDown1).click();
     }
+
     public void checkTextAnswerDropDown1() { // Сравнение текста раскрывшегося списка с ожидаемым текстом
         WebElement answer = driver.findElement(textAnswerDropDown1); // Поиск элемента с ответом
         assertEquals(
@@ -75,10 +76,12 @@ public class DropDown {
                 answer.getText()
         );
     }
+
     // 2
     public void clickButtonQuestionDropDown2() { // Кликаем по выпадающему списку
         driver.findElement(buttonQuestionDropDown2).click();
     }
+
     public void checkTextAnswerDropDown2() { // Сравнение текста раскрывшегося списка с ожидаемым текстом
         WebElement answer = driver.findElement(textAnswerDropDown2); // Поиск элемента с ответом
         assertEquals(
@@ -87,10 +90,12 @@ public class DropDown {
                 answer.getText()
         );
     }
+
     // 3
     public void clickButtonQuestionDropDown3() { // Кликаем по выпадающему списку
         driver.findElement(buttonQuestionDropDown3).click();
     }
+
     public void checkTextAnswerDropDown3() { // Сравнение текста раскрывшегося списка с ожидаемым текстом
         WebElement answer = driver.findElement(textAnswerDropDown3); // Поиск элемента с ответом
         assertEquals(
@@ -99,10 +104,12 @@ public class DropDown {
                 answer.getText()
         );
     }
+
     // 4
     public void clickButtonQuestionDropDown4() { // Кликаем по выпадающему списку
         driver.findElement(buttonQuestionDropDown4).click();
     }
+
     public void checkTextAnswerDropDown4() { // Сравнение текста раскрывшегося списка с ожидаемым текстом
         WebElement answer = driver.findElement(textAnswerDropDown4); // Поиск элемента с ответом
         assertEquals(
@@ -111,10 +118,12 @@ public class DropDown {
                 answer.getText()
         );
     }
+
     // 5
     public void clickButtonQuestionDropDown5() { // Кликаем по выпадающему списку
         driver.findElement(buttonQuestionDropDown5).click();
     }
+
     public void checkTextAnswerDropDown5() { // Сравнение текста раскрывшегося списка с ожидаемым текстом
         WebElement answer = driver.findElement(textAnswerDropDown5); // Поиск элемента с ответом
         assertEquals(
@@ -123,10 +132,12 @@ public class DropDown {
                 answer.getText()
         );
     }
+
     // 6
     public void clickButtonQuestionDropDown6() { // Кликаем по выпадающему списку
         driver.findElement(buttonQuestionDropDown6).click();
     }
+
     public void checkTextAnswerDropDown6() { // Сравнение текста раскрывшегося списка с ожидаемым текстом
         WebElement answer = driver.findElement(textAnswerDropDown6); // Поиск элемента с ответом
         assertEquals(
@@ -135,10 +146,12 @@ public class DropDown {
                 answer.getText()
         );
     }
+
     // 7
     public void clickButtonQuestionDropDown7() { // Кликаем по выпадающему списку
         driver.findElement(buttonQuestionDropDown7).click();
     }
+
     public void checkTextAnswerDropDown7() { // Сравнение текста раскрывшегося списка с ожидаемым текстом
         WebElement answer = driver.findElement(textAnswerDropDown7); // Поиск элемента с ответом
         assertEquals(
@@ -147,10 +160,12 @@ public class DropDown {
                 answer.getText()
         );
     }
+
     // 8
     public void clickButtonQuestionDropDown8() { // Кликаем по выпадающему списку
         driver.findElement(buttonQuestionDropDown8).click();
     }
+
     public void checkTextAnswerDropDown8() { // Сравнение текста раскрывшегося списка с ожидаемым текстом
         WebElement answer = driver.findElement(textAnswerDropDown8); // Поиск элемента с ответом
         assertEquals(

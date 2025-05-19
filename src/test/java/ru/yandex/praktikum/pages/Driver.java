@@ -1,4 +1,4 @@
-package org.example;
+package ru.yandex.praktikum.pages;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -50,7 +50,8 @@ public class Driver {
     }
 
     public WebDriver getDriver() {
-        return driver;    }
+        return driver;
+    }
 }
 
 
