@@ -1,12 +1,17 @@
-package ru.yandex.praktikum.tests;
+package ru.practicum.pages.tests;
 
+import org.junit.Rule;
 import org.junit.Test;
-import ru.yandex.praktikum.pages.DropdownPage;
+import org.openqa.selenium.WebDriver;
+import ru.practicum.pages.DropdownPage;
 
-public class DropdownTest extends BaseTest {
+public class DropdownTest extends DriverFactory {
+    @Rule
+    public DriverFactory driverFactory = new DriverFactory();
 
     @Test // 1
     public void checkTextDropDown1() {
+        WebDriver driver = driverFactory.getDriver();
         DropdownPage objDropDown = new DropdownPage(driver);
         objDropDown.scrollDown();
         objDropDown.clickButtonQuestionDropDown1();
@@ -15,6 +20,7 @@ public class DropdownTest extends BaseTest {
 
     @Test // 2
     public void checkTextDropDown2() {
+        WebDriver driver = driverFactory.getDriver();
         DropdownPage objDropdownPage = new DropdownPage(driver);
         objDropdownPage.scrollDown();
         objDropdownPage.clickButtonQuestionDropDown2();
@@ -23,6 +29,7 @@ public class DropdownTest extends BaseTest {
 
     @Test // 3
     public void checkTextDropDown3() {
+        WebDriver driver = driverFactory.getDriver();
         DropdownPage objDropdownPage = new DropdownPage(driver);
         objDropdownPage.scrollDown();
         objDropdownPage.clickButtonQuestionDropDown3();
@@ -31,6 +38,7 @@ public class DropdownTest extends BaseTest {
 
     @Test // 4
     public void checkTextDropDown4() {
+        WebDriver driver = driverFactory.getDriver();
         DropdownPage objDropdownPage = new DropdownPage(driver);
         objDropdownPage.scrollDown();
         objDropdownPage.clickButtonQuestionDropDown4();
@@ -39,6 +47,7 @@ public class DropdownTest extends BaseTest {
 
     @Test // 5
     public void checkTextDropDown5() {
+        WebDriver driver = driverFactory.getDriver();
         DropdownPage objDropdownPage = new DropdownPage(driver);
         objDropdownPage.scrollDown();
         objDropdownPage.clickButtonQuestionDropDown5();
@@ -47,6 +56,7 @@ public class DropdownTest extends BaseTest {
 
     @Test // 6
     public void checkTextDropDown6() {
+        WebDriver driver = driverFactory.getDriver();
         DropdownPage objDropdownPage = new DropdownPage(driver);
         objDropdownPage.scrollDown();
         objDropdownPage.clickButtonQuestionDropDown6();
@@ -55,6 +65,7 @@ public class DropdownTest extends BaseTest {
 
     @Test // 7
     public void checkTextDropDown7() {
+        WebDriver driver = driverFactory.getDriver();
         DropdownPage objDropdownPage = new DropdownPage(driver);
         objDropdownPage.scrollDown();
         objDropdownPage.clickButtonQuestionDropDown7();
@@ -63,6 +74,7 @@ public class DropdownTest extends BaseTest {
 
     @Test // 8
     public void checkTextDropDown8() {
+        WebDriver driver = driverFactory.getDriver();
         DropdownPage objDropdownPage = new DropdownPage(driver);
         objDropdownPage.scrollDown();
         objDropdownPage.clickButtonQuestionDropDown8();
