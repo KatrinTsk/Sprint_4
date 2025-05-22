@@ -1,9 +1,8 @@
 package ru.practicum.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -14,9 +13,6 @@ public class OrderPage {
     private WebDriverWait driverWait;
 
     //  ЛОКАТОРЫ
-    private By buttonCookie = By.xpath("//button[contains(text(), 'да все привыкли')]"); // Кнопка cookie "Да все привыкли"
-    private By orderButtonTop = By.className("Button_Button__ra12g"); // Верхняя кнопка "Заказать"
-    private By orderButtonBottom = By.xpath("(//button[text()='Заказать'])[2]"); // Нижняя кнопка "Заказать"
     private By namOrder = By.xpath("//input[@placeholder='* Имя']"); // Поле "Имя"
     private By lastNameOrder = By.xpath("//input[@placeholder='* Фамилия']"); // Поле "Фамилия"
     private By addressOrder = By.xpath("//input[@placeholder='* Адрес: куда привезти заказ']"); // Поле "Адрес"
@@ -35,20 +31,12 @@ public class OrderPage {
 
     public OrderPage(WebDriver driver) {
         this.driver = driver;
-        this.driverWait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        this.driverWait = new WebDriverWait(driver, Duration.ofSeconds(3));
     }
 
     // МЕТОДЫ
-    public void clickCookie() { // Клик по кнопке cookie "Да все привыкли"
-        driver.findElement(buttonCookie).click();
-    }
+    public void sendOrderFormFirstPage(String name, String lastName, String adress, String stationName, String phone) {
 
-    public void sendOrderFormFirstPage(Boolean tomButton, String name, String lastName, String adress, String stationName, String phone) {
-        if (tomButton) {
-            clickOrderButtonTop();
-        } else {
-            clickOrderButtonBottom();
-        }
         setName(name);
         setLastName(lastName);
         setAddress(adress);
@@ -68,17 +56,14 @@ public class OrderPage {
     }
 
     public boolean orderModalHeader() { // Проверка появиления окна "Заказ оформлен"
-        return driverWait.until(ExpectedConditions.visibilityOfElementLocated(modalHeader)).isDisplayed();
+        try {
+            return driverWait.until(ExpectedConditions.visibilityOfElementLocated(modalHeader)).isDisplayed();
+        } catch (TimeoutException e) {
+            return false;
+        }
     }
+    //return driverWait.until(ExpectedConditions.visibilityOfElementLocated(modalHeader)).isDisplayed();
 
-    private void clickOrderButtonTop() { // Клик по верхней кнопке "Заказать"
-        driver.findElement(orderButtonTop).click();
-    }
-
-    private void clickOrderButtonBottom() { // Скролл и клик по нижней кнопке "Заказать"
-        WebElement button = driver.findElement(orderButtonBottom);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(); arguments[0].click();", button);
-    }
 
     private void setName(String name) { // Ввод имени
         driver.findElement(namOrder).sendKeys(name);
