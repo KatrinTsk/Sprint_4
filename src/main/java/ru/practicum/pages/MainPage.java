@@ -24,7 +24,6 @@ public class MainPage {
     private By topOrderButton = By.className("Button_Button__ra12g"); // Верхняя кнопка "Заказать"
     private By bottomOrderButton = By.xpath("(//button[text()='Заказать'])[2]"); // Нижняя кнопка "Заказать"
 
-
     public MainPage(WebDriver driver) {
         this.driver = driver;
         this.driverWait = new WebDriverWait(driver, Duration.ofSeconds(5));

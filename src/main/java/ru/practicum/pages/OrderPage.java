@@ -36,7 +36,6 @@ public class OrderPage {
 
     // МЕТОДЫ
     public void sendOrderFormFirstPage(String name, String lastName, String adress, String stationName, String phone) {
-
         setName(name);
         setLastName(lastName);
         setAddress(adress);
@@ -62,8 +61,6 @@ public class OrderPage {
             return false;
         }
     }
-    //return driverWait.until(ExpectedConditions.visibilityOfElementLocated(modalHeader)).isDisplayed();
-
 
     private void setName(String name) { // Ввод имени
         driver.findElement(namOrder).sendKeys(name);
