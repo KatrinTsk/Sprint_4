@@ -22,6 +22,7 @@ public class OrderPage {
     private By dateOrder = By.xpath("//input[@placeholder='* Когда привезти самокат']"); // Поле "Когда привезти самокат"
     private By heading = By.className("Order_Header__BZXOb"); // Заголовок "Про аренду"
     private By rentalPeriodOrder = By.xpath("//div[text()='* Срок аренды']"); // Поле "Срок аренды"
+    private final String RENTAL_PERIOD_OPTION_PATTERN = "//div[@class='Dropdown-option' and text()='%s']"; // Паттерн для выбора срока аренды
     private By colorBlackScooterOrder = By.id("black"); // Чекбокс цвета самоката "Черный жемчуг"
     private By colorGreyScooterOrder = By.id("grey"); // Чекбокс цвета самоката "Серая безысходность"
     private By commentOrder = By.xpath("//input[contains(@class, 'Input_Input__1iN_Z') and contains(@class, 'Input_Responsible__1jDKN')]"); // Поле "Комментарий для курьера"
@@ -100,9 +101,10 @@ public class OrderPage {
 
     private void setRentalPeriod(String period) { // Выбора срока аренды
         driver.findElement(rentalPeriodOrder).click(); // Клик на поле "Срок аренды"
-        By periodOption = By.xpath(String.format("//div[@class='Dropdown-option' and text()='%s']", period));
+        By periodOption = By.xpath(String.format(RENTAL_PERIOD_OPTION_PATTERN, period));
         driverWait.until(ExpectedConditions.elementToBeClickable(periodOption)).click();
     }
+
 
     private void setScooterColor(String color) { // Выбора цвета самоката
         if (color.equals("black")) { // "Черный жемчуг"

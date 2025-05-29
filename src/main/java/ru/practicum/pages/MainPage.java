@@ -15,6 +15,7 @@ public class MainPage {
     private final static String DROPDOWN_QUESTION_PATTERN = "accordion__heading-%d"; // Паттерн вопросов выпадающего списка
     private final static String DROPDOWN_ANSWER_PATTERN = "accordion__panel-%d"; // Паттерн ответов выпадающего списка
 
+
     private WebDriver driver;
     private WebDriverWait driverWait;
 
